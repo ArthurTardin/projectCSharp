@@ -1,0 +1,43 @@
+//Sintex Padrão
+using System;
+namespace programaIMC
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            //Tela Inicial
+            Console.WriteLine("======Calculadora de IMC ====");
+            Console.WriteLine("Bem Vindo! Por favor, insira seu peso e altura para calcular seu IMC.");
+
+            //Entrada de Dados
+            Console.Write("Digite seu peso em kg: ".Replace(".",","));
+            float.TryParse(Console.ReadLine(), out float weight);
+
+            Console.Write("Digite sua altura em Metros: ".Replace(".",","));
+            float.TryParse(Console.ReadLine(), out float height);
+
+            //Tela de carregamento
+            Console.WriteLine("Calculando o seu IMC...");
+            Thread.Sleep(2000); //Simula um tempo de carregamento
+
+            //Cálculo do IMC
+            float IMC = weight / (float)Math.Pow(height, 2);
+
+            //Classificando os resultados
+
+            string classification = IMC switch
+            {
+                < 18.5f => "Abaixo do peso",
+                >= 18.5f and < 25f => "Peso normal",
+                >= 25f and < 30f => "Sobrepeso",
+                >= 30f and < 35f => "Obesidade grau I",
+                >= 35f and < 40f => "Obesidade grau II",
+                _ => "Obesidade grau III"
+            };
+
+            //Exibindo o resultado
+            Console.WriteLine($"O seu IMC é: {IMC:F2}, sua classificação é: {classification}");
+        }
+    }
+}

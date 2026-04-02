@@ -1,0 +1,31 @@
+//Interface Inicial - Porcentagem
+            Console.WriteLine("===== Calculadora de Porcentagem =====");
+
+            //Pergunta quantas vezes a pessoa quer
+            Console.WriteLine("Quantos cálculos de porcentagem você deseja fazer? ");
+            int.TryParse(Console.ReadLine(), out int quantidadeCalculosPorcentagem);
+            Console.Clear();
+
+            //For para repitição
+            for (int i = 0; i < quantidadeCalculosPorcentagem; i++)
+            {
+                //Declaração de variáveis e leitura dos valores
+                Console.WriteLine($"Digite o valor total para o cálculo {i + 1}: ");
+                double.TryParse(Console.ReadLine(), out double valorTotal);
+                Console.WriteLine($"Digite a porcentagem para o cálculo {i + 1}: ");
+                double.TryParse(Console.ReadLine(), out double porcentagem);
+
+                //Tela de carregamento
+                Console.WriteLine("Calculando...");
+                Thread.Sleep(2000); // Simula um tempo de processamento
+                Console.Clear();
+
+                //Cálculo da porcentagem
+                double resultado = (valorTotal * porcentagem) / 100;
+
+                //Exibição do resultado
+                Console.WriteLine($"{porcentagem}% de {valorTotal} é: {resultado}");
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine(); // Pausa para o usuário ver o resultado
+                Console.Clear();
+            }

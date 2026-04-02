@@ -1,0 +1,93 @@
+//Sintex Padrão
+using System;
+using System.Reflection.Metadata.Ecma335;
+namespace programaIMC
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            //Variáveis de conversão
+            double americanDollar = 5.18;
+            double Euro = 5.97;
+            double JapaneseYen = 0.032;
+            double BritishPound = 6.84;
+            double SwissFranc = 6.48;
+            double RenminbiYuan = 0.75;
+            double AustralianDollar = 3.56;
+            double CanadianDollar = 4.73;
+
+            //Tela Inicial
+            Console.WriteLine("======Conversor de Moedas======");
+
+            //Solicitar a moeda de origem
+            Console.WriteLine("Escolha a moeda de destino com base nos números: " +
+                "\n 1: Dólar Americano " +
+                "\n2: Euro " +
+                "\n3: Iene Japonês " +
+                "\n4: Libra Esterlina " +
+                "\n5: Franco Suiço " +
+                "\n6: Renminbi/Yuan " +
+                "\n7: Dólar Australino" +
+                "\n8: Dólar Canadense");
+            int.TryParse(Console.ReadLine(), out int originCurrency);
+
+            //Realizar a conversão com base na moeda de origem
+            switch (originCurrency)
+            {
+                case 1:
+                    double valueToConvert; //Variável para armazenar o valor a ser convertido
+                    Console.Write("Digite o valor em reais: "); 
+                    double.TryParse(Console.ReadLine(), out valueToConvert);
+                    double valueInDollars = valueToConvert / americanDollar;
+                    Console.WriteLine($"O valor em Dólares é: {valueInDollars:F2}");
+                    break;
+                case 2:
+                    Console.Write("Digite o valor em reais: ");
+                    double.TryParse(Console.ReadLine(), out valueToConvert);
+                    double valueInEuros = valueToConvert / Euro;
+                    Console.WriteLine($"O valor em Euros é: {valueInEuros:F2}");
+                    break;
+                case 3:
+                    Console.Write("Digite o valor em reais: ");
+                    double.TryParse(Console.ReadLine(), out valueToConvert);
+                    double valueInYen = valueToConvert / JapaneseYen;
+                    Console.WriteLine($"O valor em Ienes é: {valueInYen:F2}");
+                    break;
+                case 4:
+                    Console.Write("Digite o valor em reais: ");
+                    double.TryParse(Console.ReadLine(), out valueToConvert);
+                    double valueInPounds = valueToConvert / BritishPound;
+                    Console.WriteLine($"O valor em Libras é: {valueInPounds:F2}");
+                    break;
+                case 5:
+                    Console.Write("Digite o valor em reais: ");
+                    double.TryParse(Console.ReadLine(), out valueToConvert);
+                    double valueInFrancs = valueToConvert / SwissFranc;
+                    Console.WriteLine($"O valor em Francos é: {valueInFrancs:F2}");
+                    break;
+                case 6: 
+                    Console.Write("Digite o valor em reais: ");
+                    double.TryParse(Console.ReadLine(), out valueToConvert);
+                    double valueInYuan = valueToConvert / RenminbiYuan;
+                    Console.WriteLine($"O valor em Yuan é: {valueInYuan:F2}");
+                    break;
+                case 7: 
+                    Console.Write("Digite o valor em reais: ");
+                    double.TryParse(Console.ReadLine(), out valueToConvert);
+                    double valueInAustralianDollars = valueToConvert / AustralianDollar;
+                    Console.WriteLine($"O valor em Dólares Australianos é: {valueInAustralianDollars:F2}");
+                    break;
+                case 8:                   
+                    Console.Write("Digite o valor em reais: ");
+                    double.TryParse(Console.ReadLine(), out valueToConvert);
+                    double valueInCanadianDollars = valueToConvert / CanadianDollar;
+                    Console.WriteLine($"O valor em Dólares Canadenses é: {valueInCanadianDollars:F2}");
+                    break;
+                default: 
+                    Console.WriteLine("Opção inválida. Por favor, escolha um número entre 1 e 8.");
+                    break;
+            }
+        }
+    }
+}

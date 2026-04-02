@@ -1,0 +1,32 @@
+//Calculadora de juros
+            Console.WriteLine("===== Calculadora de Juros Simples =====");
+
+            //Declaração de variáveis e leitura dos valores
+            Console.WriteLine("Digite o valor do capital");
+            double.TryParse(Console.ReadLine(), out double capital);
+
+            Console.WriteLine("Digite a taxa de juros (em %)");
+            double.TryParse(Console.ReadLine(), out double taxaJuros);
+
+            Console.WriteLine("Digite o tempo (em meses)");
+            double.TryParse(Console.ReadLine(), out double tempo);
+
+            //Tela de carregamento
+            Console.Clear();
+            Console.WriteLine("Calculando...");
+            Thread.Sleep(2000); // Simula um tempo de processamento
+            Console.Clear();
+
+            //Cálculo dos juros simples
+            double juros = (capital * taxaJuros * tempo) / 100;
+
+            //Exibição do resultado
+            Console.WriteLine($"O valor dos juros simples é: {juros}");
+            Console.WriteLine("Pressione ENTER para continuar");
+            Console.ReadLine(); // Pausa para o usuário ver o resultado
+
+            //Interface final
+            Console.WriteLine("===== Fim dos cálculos! =====");
+        }
+    }
+}

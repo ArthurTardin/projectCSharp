@@ -1,0 +1,36 @@
+using System;
+
+namespace Aula1
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            //Interface Inicial
+            Console.WriteLine("===== Calculadora de Área de círculo =====");
+
+            //Pergunta quantos círculos a pessoa quer calcular
+            Console.WriteLine("Quantos círculos você deseja calcular a área? ");
+            int.TryParse(Console.ReadLine(), out int quantidadeCirculos);
+
+            //For para repitição
+            for (int i = 0; i < quantidadeCirculos; i++)
+            {
+                //Declaração de variáveis e leitura do raio
+                Console.WriteLine($"Digite o raio do círculo {i + 1}: ");
+                double.TryParse(Console.ReadLine(), out double raio);
+
+                //Tela de carregamento
+                Console.WriteLine("Calculando...");
+                Thread.Sleep(2000); // Simula um tempo de processamento
+                Console.Clear();
+
+                //Cálculo da área do círculo
+                double area = Math.PI * Math.Pow(raio, 2);
+
+                //Exibição do resultado
+                Console.WriteLine($"A área do círculo{i + 1} é: {area}");
+                Console.WriteLine("Pressione ENTER para continuar");
+                Console.ReadLine(); // Pausa para o usuário ver o resultado
+                Console.Clear();
+            }
