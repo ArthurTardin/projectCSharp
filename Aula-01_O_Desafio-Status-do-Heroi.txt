@@ -1,0 +1,18 @@
+String name = "Fantastico";
+int AtaqueBase = 10;
+int BonusArma = 11;
+int AtaqueTotal = AtaqueBase + BonusArma;
+Double VidaInimigo = 150.5f;
+Double Dano = 50.5f;
+double VidaRestante = VidaInimigo - Dano;
+float moedas = 10;
+var BonusdeVitoria = 10 * 2;
+long experiencia = 5000;
+long MediaporNivel = 5000 / 2;
+bool entendiamateria = true;
+Console.WriteLine($"Nome: {name}");
+Console.WriteLine($"Ataque Total: {AtaqueTotal}");
+Console.WriteLine($"Vida Restante: {VidaRestante}");
+Console.WriteLine($"Bonus de Vitoria: {BonusdeVitoria}");
+Console.WriteLine($"Media por Nivel: {MediaporNivel}");
+Console.WriteLine($"Entendi a materia? {entendiamateria}");

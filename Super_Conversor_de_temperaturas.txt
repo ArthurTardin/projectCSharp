@@ -1,0 +1,27 @@
+Console.WriteLine("conversor de Célsius C° para fahrenheit F°" +
+    "\n Digite o valor em Célsius:");
+float resultado, celsius;
+float.TryParse(Console.ReadLine(), out celsius);
+resultado = (celsius * 9 / 5) + 32;
+Console.WriteLine($"O resultado em Fahrenheit é: {resultado}F°");
+
+Console.WriteLine("Esse é um conversor de fahrenheit para Célsius" +
+    "\n digite o valor em fahrenheit");
+float resultado, fahrenheit;
+float.TryParse(Console.ReadLine(), out fahrenheit);
+resultado = (fahrenheit - 32) * 5 / 9;
+Console.WriteLine($"O resultado é: {resultado}C°");
+
+﻿Console.WriteLine("Esse é um conversor de Kelvin K para Célsius C°" +
+    "\n Digite o valor em Kelvin:");
+float resultado, Kelvin;
+float.TryParse(Console.ReadLine(), out Kelvin);
+resultado = Kelvin - 273.15f;
+Console.WriteLine($"O resultado é: {resultado}C°");
+
+Console.WriteLine("Esse é um conversor de Kelvin K para Fahrenheit F°" +
+    "\n Digite o valor em Kelvin K:");
+float Kelvin, resultado;
+float.TryParse(Console.ReadLine(), out Kelvin);
+resultado = (Kelvin - 273.15f) * 9 / 5 + 32;
+Console.WriteLine($"O resultado é: {resultado}F°");
