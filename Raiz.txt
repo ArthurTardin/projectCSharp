@@ -1,0 +1,19 @@
+//sintex padrão
+using System;
+namespace pedroAntônio
+{
+    public class Program
+    {
+        public static void Main()
+        {
+            //Tela Inicial
+            Console.WriteLine("Escreva um número para saber sua raiz"); double.TryParse(Console.ReadLine(), out var number);
+
+            //Conta
+            Math.Sqrt(number);
+
+            //Impressão do resultado
+            Console.WriteLine($"A raiz é: ");
+        }
+    }
+}
